@@ -4,13 +4,14 @@ import Info from "./info";
 import Notifications from "./notifications";
 import Profile from "./profile";
 import Search from "./search";
+import { ThemeToggle } from "./theme-toggle";
 
 const Navbar = () => {
   return (
     <Flex
       layerStyle="card"
       h="4.5rem"
-      roundedBottom="2xl"
+      roundedBottom={[, , "2xl"]}
       alignItems="center"
       p={5}
     >
@@ -18,8 +19,11 @@ const Navbar = () => {
         <Info />
         <Search />
         <Spacer />
-        <Notifications />
-        <Profile />
+        <Stack direction="row" alignItems="center" spacing={6}>
+          <ThemeToggle />
+          <Notifications />
+          <Profile />
+        </Stack>
       </Stack>
     </Flex>
   );

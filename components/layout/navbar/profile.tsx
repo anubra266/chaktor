@@ -1,6 +1,6 @@
 import { Avatar, AvatarBadge } from "@chakra-ui/avatar";
 import Icon from "@chakra-ui/icon";
-import { Flex, HStack } from "@chakra-ui/layout";
+import { HStack } from "@chakra-ui/layout";
 import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
 const Profile = () => {

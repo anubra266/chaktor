@@ -1,9 +1,10 @@
 import { IconButton } from "@chakra-ui/button";
-import { chakra } from "@chakra-ui/system";
+import { chakra, useColorModeValue as mode } from "@chakra-ui/system";
 import React from "react";
 import { FiBell } from "react-icons/fi";
 
 const Notifications = () => {
+  const color = mode("blue", "red");
   return (
     <IconButton
       aria-label="Notifications"
@@ -14,11 +15,8 @@ const Notifications = () => {
           <FiBell />
           <chakra.span
             pos="absolute"
-            top={0}
-            right={0}
-            display="inline-flex"
-            alignItems="center"
-            justifyContent="center"
+            top="-1px"
+            right="-1px"
             px={2}
             py={1}
             fontSize="xs"
@@ -29,7 +27,7 @@ const Notifications = () => {
             bg="red.600"
             rounded="full"
           >
-            1
+            8
           </chakra.span>
         </>
       }

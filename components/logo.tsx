@@ -1,8 +1,11 @@
 import React from "react";
-import { Icon, useToken } from "@chakra-ui/react";
+import { Icon, useColorModeValue as mode, useToken } from "@chakra-ui/react";
 
 const Logo = () => {
-  const [brand400, brand600] = useToken("colors", ["brand.400", "brand.600"]);
+  const color400 = mode("blue.400", "brand.400");
+  const color600 = mode("blue.600", "brand.600");
+  const [brand400, brand600] = useToken("colors", [color400, color600]);
+
   return (
     <Icon
       boxSize={30}
