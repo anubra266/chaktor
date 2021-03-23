@@ -26,16 +26,19 @@ function MyApp({ Component, pageProps }: AppProps) {
               height: 600,
               alt: "Og Image Alt",
             },
-            {
-              url: "/og-image-02.jpg",
-              width: 900,
-              height: 800,
-              alt: "Og Image Alt Second",
-            },
-            { url: "/og-image-03.jpg" },
-            { url: "/og-image-04.jpg" },
           ],
         }}
+        additionalLinkTags={[
+          {
+            rel: "icon",
+            href: "/logo.png",
+          },
+          {
+            rel: "apple-touch-icon",
+            href: "/apple-touch-icon.png",
+            sizes: "76x76",
+          },
+        ]}
         twitter={{
           handle: "@anubra266",
           site: "@anubra266",
