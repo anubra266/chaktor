@@ -3,11 +3,11 @@ import React from "react";
 import Navbar from "./navbar";
 import Page from "./page";
 import Sidebar from "./sidebar";
-import Scrollbar from "./scrollbar";
+import Scroll from "./scroll";
 
 const SiteLayout = ({ children }: any) => {
   return (
-    <Scrollbar>
+    <Scroll>
       <Box textStyle="light">
         <Navbar />
         <Box pos="relative" h="max-content" m={5}>
@@ -17,7 +17,7 @@ const SiteLayout = ({ children }: any) => {
           </Stack>
         </Box>
       </Box>
-    </Scrollbar>
+    </Scroll>
   );
 };
 
