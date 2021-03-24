@@ -1,22 +1,28 @@
 import { Box, Stack } from "@chakra-ui/layout";
-import React from "react";
+import React, { createContext } from "react";
 import Navbar from "./navbar";
 import Page from "./page";
 import Sidebar from "./sidebar";
 import Scroll from "./scroll";
+import { useDisclosure, UseDisclosureReturn } from "@chakra-ui/hooks";
+
+export const NavContext = createContext<UseDisclosureReturn>(null);
 
 const SiteLayout = ({ children }: any) => {
+  const nav = useDisclosure();
   return (
     <Scroll>
-      <Box textStyle="light">
-        <Navbar />
-        <Box pos="relative" h="max-content" m={5}>
-          <Stack direction="row" spacing={5}>
-            <Sidebar />
-            <Page>{children}</Page>
-          </Stack>
+      <NavContext.Provider value={nav}>
+        <Box textStyle="light">
+          <Navbar />
+          <Box pos="relative" h="max-content" m={5}>
+            <Stack direction="row" spacing={5}>
+              <Sidebar />
+              <Page>{children}</Page>
+            </Stack>
+          </Box>
         </Box>
-      </Box>
+      </NavContext.Provider>
     </Scroll>
   );
 };

@@ -1,4 +1,4 @@
-import { Stack } from "@chakra-ui/layout";
+import { Spacer, Stack } from "@chakra-ui/layout";
 import React from "react";
 import { RiDashboardLine } from "react-icons/ri";
 import { BiBasket } from "react-icons/bi";
@@ -11,7 +11,7 @@ import NavItem from "./nav-item";
 import SectionHeader from "./section-header";
 import { FaIntercom, FaJira, FaSlack } from "react-icons/fa";
 import IntegrationItem from "./integration-item";
-import { FiPlus } from "react-icons/fi";
+import { FiPlus, FiPower, FiSettings } from "react-icons/fi";
 
 const Sidebar = () => {
   return (
@@ -47,6 +47,9 @@ const Sidebar = () => {
       <IntegrationItem icon={FiPlus} scheme="purple">
         Add new plugin
       </IntegrationItem>
+      <Spacer />
+      <NavItem icon={FiSettings}>Settings</NavItem>
+      <NavItem icon={FiPower}>Logout</NavItem>
     </Stack>
   );
 };

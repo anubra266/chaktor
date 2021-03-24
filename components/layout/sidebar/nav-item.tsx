@@ -14,7 +14,7 @@ const NavItem = (props: NavItem) => {
   const activeColor = mode("blue.600", "white");
   const activeProps: BoxProps = {
     color: activeColor,
-    borderRightColor: activeColor,
+    borderRightColor: props.active && activeColor,
     bg: "blackAlpha.300",
   };
   return (
@@ -26,10 +26,10 @@ const NavItem = (props: NavItem) => {
       spacing={4}
       alignItems="center"
       fontWeight="semibold"
-      _hover={{ ...activeProps, fontWeight: "md" }}
       transition="all .4s ease-in-out"
       borderRightWidth="3px"
       borderRightColor="transparent"
+      _hover={activeProps}
       {...(props.active && activeProps)}
     >
       <Icon as={props.icon} fontSize="xl" />

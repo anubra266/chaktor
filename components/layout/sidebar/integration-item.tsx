@@ -17,7 +17,7 @@ const IntegrationItem = (props: IntegrationItem) => {
       direction="row"
       cursor="pointer"
       px={8}
-      py={2}
+      py={3}
       fontWeight="semibold"
       alignItems="center"
       _hover={{

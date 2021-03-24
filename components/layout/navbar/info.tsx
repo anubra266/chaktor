@@ -1,6 +1,7 @@
-import { Flex, Stack, Text } from "@chakra-ui/layout";
+import { Flex, Spacer, Stack, Text } from "@chakra-ui/layout";
 import Logo from "components/logo";
 import React from "react";
+import NavButton from "./nav-button";
 
 const Info = () => {
   return (
@@ -12,6 +13,8 @@ const Info = () => {
         </Text>
         <Text fontSize="sm">anubra266@chaktor.dev</Text>
       </Flex>
+      <Spacer />
+      <NavButton />
     </Stack>
   );
 };
