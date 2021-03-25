@@ -12,8 +12,10 @@ import SectionHeader from "./section-header";
 import { FaIntercom, FaJira, FaSlack } from "react-icons/fa";
 import IntegrationItem from "./integration-item";
 import { FiPlus, FiPower, FiSettings } from "react-icons/fi";
+import { useRouter } from "next/router";
 
 const Sidebar = () => {
+  const router = useRouter();
   return (
     <Stack
       layerStyle="card"
@@ -25,15 +27,11 @@ const Sidebar = () => {
       spacing={2}
       fontSize="sm"
     >
-      <NavItem active icon={RiDashboardLine}>
-        Dashboard
-      </NavItem>
-      <NavItem count={3} icon={HiOutlineChat}>
-        Team Chat
-      </NavItem>
-      <NavItem icon={HiOutlineCalendar}>Calendar</NavItem>
-      <NavItem icon={HiOutlineFolder}>Documents</NavItem>
-      <NavItem icon={BiBasket}>Store</NavItem>
+      {routes.map(({ name, ...props }, rid) => (
+        <NavItem key={rid} active={router.pathname === props.href} {...props}>
+          {name}
+        </NavItem>
+      ))}
       <SectionHeader>Integrations</SectionHeader>
       <IntegrationItem icon={FaJira} scheme="telegram">
         Jira
@@ -55,3 +53,11 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+const routes = [
+  { name: "Dashboard", href: "/", icon: RiDashboardLine },
+  { name: "Team Chat", href: "/team-chat", icon: HiOutlineChat },
+  { name: "Calendar", href: "/calendar", icon: HiOutlineCalendar },
+  { name: "Documents", href: "/documents", icon: HiOutlineFolder },
+  { name: "Store", href: "/store", icon: BiBasket },
+];

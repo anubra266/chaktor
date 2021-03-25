@@ -3,7 +3,7 @@ import { ReactJSXElementChildrenAttribute } from "@emotion/react/types/jsx-names
 import React from "react";
 
 const Page = (props: { children: ReactJSXElementChildrenAttribute }) => {
-  return <Box h="70vh">{props.children}</Box>;
+  return <Box w="full">{props.children}</Box>;
 };
 
 export default Page;

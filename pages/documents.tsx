@@ -5,15 +5,13 @@ import { NextSeo } from "next-seo";
 import { IoIosArrowDown } from "react-icons/io";
 import { RiDashboardLine } from "react-icons/ri";
 
-export default function Dashboard() {
+export default function Documents() {
   return (
     <Box>
-      <NextSeo title="Dashboard" description="App Dashboard" />
+      <NextSeo title="Documents" description="App Dashboard" />
       <PageHeader>
-        <PageHeader.Title>Dashboard</PageHeader.Title>
-        <PageHeader.Description>
-          Whole data about your business here
-        </PageHeader.Description>
+        <PageHeader.Title>Documents</PageHeader.Title>
+        <PageHeader.Description>Chakra UI Community</PageHeader.Description>
         <PageHeader.Actions>
           <Stack direction="row">
             <Stack direction="row" alignItems="center">

@@ -11,7 +11,7 @@ type IntegrationItem = {
   children: ReactNode;
 };
 const IntegrationItem = (props: IntegrationItem) => {
-  const hoverColor = mode("blue.600", "white");
+  const hoverColor = mode("brand.600", "white");
   return (
     <Stack
       direction="row"

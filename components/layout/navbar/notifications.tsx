@@ -1,10 +1,9 @@
 import { IconButton } from "@chakra-ui/button";
-import { chakra, useColorModeValue as mode } from "@chakra-ui/system";
+import { chakra } from "@chakra-ui/system";
 import React from "react";
 import { FiBell } from "react-icons/fi";
 
 const Notifications = () => {
-  const color = mode("blue", "red");
   return (
     <IconButton
       aria-label="Notifications"

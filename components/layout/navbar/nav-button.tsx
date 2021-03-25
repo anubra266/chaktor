@@ -1,15 +1,14 @@
-import { Box, Stack, useColorModeValue as mode } from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
 import React, { useContext } from "react";
 import { NavContext } from "..";
 
 const NavButton = () => {
   const { onToggle, isOpen } = useContext(NavContext);
-  const color = mode("blue", "brand");
   const barStyle = {
     w: "20px",
     h: "2.2px",
-    bg: `${color}.400`,
-    transition: "all .4s ease-in-out",
+    bg: "brand.400",
+    transition: "all .2s ease-in-out",
   };
   return (
     <Stack
