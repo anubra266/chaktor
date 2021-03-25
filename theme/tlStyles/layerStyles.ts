@@ -6,4 +6,7 @@ export const layerStyles: layerStyles = {
   card: {
     ...mode("bg", "white", "whiteAlpha.100"),
   },
+  neutral: {
+    ...mode("bg", "gray.50", "bg.800"),
+  },
 };

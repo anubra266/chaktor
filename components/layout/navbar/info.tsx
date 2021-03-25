@@ -1,11 +1,10 @@
-import { Flex, Spacer, Stack, Text } from "@chakra-ui/layout";
+import { Flex, Stack, StackProps, Text } from "@chakra-ui/layout";
 import Logo from "components/logo";
 import React from "react";
-import NavButton from "./nav-button";
 
-const Info = () => {
+const Info = (props: StackProps) => {
   return (
-    <Stack direction="row" alignItems="center">
+    <Stack direction="row" alignItems="center" {...props}>
       <Logo />
       <Flex direction="column" lineHeight="5">
         <Text fontSize="lg" fontWeight="semibold" textStyle="default">
@@ -13,8 +12,6 @@ const Info = () => {
         </Text>
         <Text fontSize="sm">anubra266@chaktor.dev</Text>
       </Flex>
-      <Spacer />
-      <NavButton />
     </Stack>
   );
 };

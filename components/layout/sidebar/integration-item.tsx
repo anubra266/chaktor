@@ -2,13 +2,13 @@ import { IconButton, IconButtonProps } from "@chakra-ui/button";
 import Icon from "@chakra-ui/icon";
 import { Stack, Text } from "@chakra-ui/layout";
 import { useColorModeValue as mode } from "@chakra-ui/system";
-import React, { ReactNode } from "react";
+import React from "react";
 import { IconType } from "react-icons";
 
 type IntegrationItem = {
   icon: IconType;
   scheme?: IconButtonProps["colorScheme"];
-  children: ReactNode;
+  name: string;
 };
 const IntegrationItem = (props: IntegrationItem) => {
   const hoverColor = mode("brand.600", "white");
@@ -35,7 +35,7 @@ const IntegrationItem = (props: IntegrationItem) => {
         colorScheme={props.scheme}
         icon={<Icon as={props.icon} />}
       />
-      <Text>{props.children}</Text>
+      <Text>{props.name}</Text>
     </Stack>
   );
 };

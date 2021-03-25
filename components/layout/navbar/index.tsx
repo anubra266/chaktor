@@ -1,12 +1,19 @@
-import { Flex, Spacer, Stack } from "@chakra-ui/layout";
+import { Flex, Spacer, Stack, Text } from "@chakra-ui/layout";
 import React from "react";
+import Actions from "./actions";
 import Info from "./info";
-import Notifications from "./notifications";
-import Profile from "./profile";
+import NavButton from "./nav-button";
 import Search from "./search";
-import { ThemeToggle } from "./theme-toggle";
+import { useRouter } from "next/router";
+import { routes } from "../sidebar";
 
 const Navbar = () => {
+  const router = useRouter();
+
+  const getRoute = () => {
+    return routes.find(({ href }) => router.pathname === href).name;
+  };
+
   return (
     <Flex
       layerStyle="card"
@@ -15,15 +22,23 @@ const Navbar = () => {
       alignItems="center"
       p={5}
     >
-      <Stack direction="row" w="full" alignItems="center" spacing={8}>
-        <Info />
-        <Search />
+      <Stack direction="row" w="full" alignItems="center" spacing={[0, , 8]}>
+        <Info display={["none", , "flex"]} />
+        <NavButton />
+
         <Spacer />
-        <Stack direction="row" alignItems="center" spacing={6}>
-          <ThemeToggle />
-          <Notifications />
-          <Profile />
-        </Stack>
+        <Text
+          textStyle="default"
+          fontSize="xl"
+          fontWeight="semibold"
+          fontFamily="cursive"
+          display={{ md: "none" }}
+        >
+          {getRoute()}
+        </Text>
+        <Spacer />
+        <Search display={["none", , "initial"]} />
+        <Actions />
       </Stack>
     </Flex>
   );

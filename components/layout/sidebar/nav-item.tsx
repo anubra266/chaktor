@@ -8,16 +8,16 @@ import {
   Text,
 } from "@chakra-ui/layout";
 import { chakra, useColorModeValue as mode } from "@chakra-ui/system";
-import React, { ReactNode } from "react";
+import React from "react";
 import { IconType } from "react-icons";
 import NextLink from "next/link";
 
-type NavItem = {
+export type NavItem = {
   icon: IconType;
-  children: ReactNode;
   active?: boolean;
   count?: number;
   href?: string;
+  name: string;
 };
 const NavItem = (props: NavItem) => {
   const activeColor = mode("brand.600", "white");
@@ -26,6 +26,7 @@ const NavItem = (props: NavItem) => {
     borderRightColor: props.active && activeColor,
     bg: "blackAlpha.300",
   };
+
   return (
     <LinkBox>
       <Stack
@@ -45,7 +46,7 @@ const NavItem = (props: NavItem) => {
         <Icon as={props.icon} fontSize="xl" />
         <NextLink href={props.href || ""} passHref>
           <LinkOverlay>
-            <Text>{props.children}</Text>
+            <Text>{props.name}</Text>
           </LinkOverlay>
         </NextLink>
         <Spacer />

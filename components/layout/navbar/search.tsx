@@ -1,12 +1,17 @@
 import Icon from "@chakra-ui/icon";
-import { Input, InputGroup, InputLeftElement } from "@chakra-ui/input";
+import {
+  Input,
+  InputGroup,
+  InputGroupProps,
+  InputLeftElement,
+} from "@chakra-ui/input";
 import React from "react";
 
 import { FiSearch } from "react-icons/fi";
 
-const Search = () => {
+const Search = (props: InputGroupProps) => {
   return (
-    <InputGroup display="flex" alignItems="center">
+    <InputGroup display="flex" alignItems="center" {...props}>
       <InputLeftElement
         h="full"
         pointerEvents="none"
