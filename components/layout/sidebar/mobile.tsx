@@ -30,7 +30,7 @@ const MobileSidebar = () => {
         <DrawerContent layerStyle="neutral" py={8}>
           <Stack spacing={2} fontSize="sm">
             <DrawerCloseButton />
-            <Search w="fUll" py={2} />
+            <Search w="fUll" py={2} px={5} />
             {routes.map((props, rid) => (
               <NavItem
                 key={`nav-item-${rid}`}

@@ -5,28 +5,31 @@ import {
   InputGroupProps,
   InputLeftElement,
 } from "@chakra-ui/input";
+import { Flex } from "@chakra-ui/layout";
 import React from "react";
 
 import { FiSearch } from "react-icons/fi";
 
 const Search = (props: InputGroupProps) => {
   return (
-    <InputGroup display="flex" alignItems="center" {...props}>
-      <InputLeftElement
-        h="full"
-        pointerEvents="none"
-        children={<Icon as={FiSearch} color="blue.600" fontSize="lg" />}
-      />
-      <Input
-        type="text"
-        placeholder="Search for people, document, goods..."
-        fontSize="sm"
-        _placeholder={{
-          textStyle: "light",
-        }}
-        variant="unstyled"
-      />
-    </InputGroup>
+    <Flex {...props}>
+      <InputGroup display="flex" alignItems="center">
+        <InputLeftElement
+          h="full"
+          pointerEvents="none"
+          children={<Icon as={FiSearch} color="blue.600" fontSize="lg" />}
+        />
+        <Input
+          type="text"
+          placeholder="Search for people, document, goods..."
+          fontSize="sm"
+          _placeholder={{
+            textStyle: "light",
+          }}
+          variant="unstyled"
+        />
+      </InputGroup>
+    </Flex>
   );
 };
 

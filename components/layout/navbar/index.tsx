@@ -26,7 +26,7 @@ const Navbar = () => {
         <Info display={["none", , "flex"]} />
         <NavButton />
 
-        <Spacer />
+        <Spacer display={{ md: "none" }} />
         <Text
           textStyle="default"
           fontSize="xl"
@@ -36,8 +36,8 @@ const Navbar = () => {
         >
           {getRoute()}
         </Text>
-        <Spacer />
         <Search display={["none", , "initial"]} />
+        <Spacer />
         <Actions />
       </Stack>
     </Flex>
