@@ -56,7 +56,7 @@ export default Sidebar;
 
 const routes = [
   { name: "Dashboard", href: "/", icon: RiDashboardLine },
-  { name: "Team Chat", href: "/team-chat", icon: HiOutlineChat },
+  { name: "Team Chat", href: "/team-chat", icon: HiOutlineChat, count: 3 },
   { name: "Calendar", href: "/calendar", icon: HiOutlineCalendar },
   { name: "Documents", href: "/documents", icon: HiOutlineFolder },
   { name: "Store", href: "/store", icon: BiBasket },
