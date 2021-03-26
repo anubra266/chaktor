@@ -10,10 +10,10 @@ import MobileSidebar from "./sidebar/mobile";
 export const NavContext = createContext<UseDisclosureReturn>(null);
 
 const SiteLayout = ({ children }: any) => {
-  const nav = useDisclosure();
+  const sidebarState = useDisclosure();
   return (
     <Scroll>
-      <NavContext.Provider value={nav}>
+      <NavContext.Provider value={sidebarState}>
         <Box textStyle="light">
           <Navbar />
           <Box pos="relative" h="max-content" m={5}>

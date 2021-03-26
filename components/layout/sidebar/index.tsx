@@ -21,7 +21,6 @@ const Sidebar = () => {
   const { isOpen } = useContext(NavContext);
   const NavAction = isOpen ? CollapsedItem : NavItem;
   const IntegrationAction = isOpen ? CollapsedItem : IntegrationItem;
-  //TODO add my social links
   return (
     <Stack
       layerStyle="card"
