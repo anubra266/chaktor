@@ -12,6 +12,6 @@ export const textStyles: textStyles = {
     ...mode("color", "black", "white"),
   },
   light: {
-    ...mode("color", "gray.600", "gray.500"),
+    ...mode("color", "gray.600", "gray.400"),
   },
 };

@@ -11,7 +11,7 @@ const Navbar = () => {
   const router = useRouter();
 
   const getRoute = () => {
-    return routes.find(({ href }) => router.pathname === href).name;
+    return routes.find(({ href }) => router.pathname === href)?.name;
   };
 
   return (
@@ -45,3 +45,14 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+export async function getStaticProps() {
+  // Get contributors from .all-contributorsrc
+  const contributorsRaw = path.resolve(".all-contributorsrc");
+  const { contributors } = JSON.parse(
+    fs.readFileSync(contributorsRaw, "utf-8")
+  );
+  return {
+    props: { contributors },
+  };
+}

@@ -8,13 +8,17 @@ type PageHeader = {
   Actions: typeof Actions;
 };
 const PageHeader: React.FC & PageHeader = ({ children }: JustChild) => {
+  const getChild = (type: string) =>
+    React.Children.map(
+      children,
+      (child: any) => child.type.name === type && child
+    );
   return (
     <Flex w="full" direction="column">
-      {getChild(children, "Title")}
-      <Stack direction="row" alignItems="center">
-        {getChild(children, "Description")}
-        <Spacer />
-        {getChild(children, "Actions")}
+      {getChild("Title")}
+      <Stack direction={{ base: "column", xl: "row" }}>
+        {getChild("Description")}
+        {getChild("Actions")}
       </Stack>
     </Flex>
   );
@@ -29,20 +33,14 @@ const Title = ({ children }: JustChild) => {
 };
 
 const Description = ({ children }: JustChild) => {
-  return <Text>{children}</Text>;
+  return <Text mr="auto">{children}</Text>;
 };
 
 const Actions = ({ children }: JustChild) => {
-  return <>{children}</>;
+  return <Flex ml="auto">{children}</Flex>;
 };
 
 PageHeader.Title = Title;
 PageHeader.Description = Description;
 PageHeader.Actions = Actions;
 export default PageHeader;
-
-const getChild = (children: any, type: string) =>
-  React.Children.map(
-    children,
-    (child: any) => child.type.name === type && child
-  );
