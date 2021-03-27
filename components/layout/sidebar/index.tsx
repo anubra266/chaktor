@@ -48,7 +48,7 @@ const Sidebar = () => {
       ))}
       <IntegrationAction name="Add new plugin" icon={FiPlus} scheme="purple" />
       <Spacer />
-      <Divider />
+      <Divider display={{ md: "none" }} />
       <NavAction name="Settings" icon={FiSettings} />
       <NavAction name="Logout" icon={FiPower} />
     </Stack>

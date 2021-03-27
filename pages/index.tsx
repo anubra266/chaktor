@@ -1,4 +1,4 @@
-import { GridItem, SimpleGrid } from "@chakra-ui/layout";
+import { Grid, GridItem, SimpleGrid, Stack } from "@chakra-ui/layout";
 import Header from "components/dashboard/header";
 import Sales from "components/dashboard/sales";
 import { NextSeo } from "next-seo";
@@ -7,18 +7,18 @@ export default function Dashboard() {
   return (
     <>
       <NextSeo title="Dashboard" description="App Dashboard" />
-      <SimpleGrid columns={12} w="full" spacing={8}>
-        <GridItem
-          colSpan={{ base: 12, lg: 6, xl: 8 }}
-          as={SimpleGrid}
-          columns={12}
-        >
+      <Grid
+        w="full"
+        gap={8}
+        templateColumns={["repeat(1, 1fr)",  "auto 300px"]}
+      >
+        <SimpleGrid columns={12} w="full">
           <GridItem colSpan={12}>
             <Header />
           </GridItem>
-        </GridItem>
+        </SimpleGrid>
         <Sales />
-      </SimpleGrid>
+      </Grid>
     </>
   );
 }
