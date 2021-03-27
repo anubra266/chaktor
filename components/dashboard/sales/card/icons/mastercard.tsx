@@ -3,13 +3,8 @@ import React from "react";
 
 const Mastercard = () => {
   return (
-    <Icon
-      width="100"
-      height="50"
-      viewBox="0 0 200 192.756"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g fill-rule="evenodd" clip-rule="evenodd">
+    <Icon width="100" height="50" viewBox="0 0 200 192.756">
+      <g fillRule="evenodd" clipRule="evenodd">
         <path fill="transparent" d="M0 0h192.756v192.756H0V0z" />
         <path
           d="M96.42 133.041c8.667 7.986 20.306 12.83 32.966 12.83 27.189 0 49.195-22.176 49.195-49.451 0-27.358-22.006-49.535-49.195-49.535-12.66 0-24.299 4.843-32.966 12.83-9.941 9.091-16.229 22.176-16.229 36.705.001 14.529 6.288 27.615 16.229 36.621z"

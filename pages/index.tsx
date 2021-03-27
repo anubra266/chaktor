@@ -7,7 +7,7 @@ export default function Dashboard() {
   return (
     <>
       <NextSeo title="Dashboard" description="App Dashboard" />
-      <SimpleGrid columns={12} spacing={8}>
+      <SimpleGrid columns={12} w="full" spacing={8}>
         <GridItem
           colSpan={{ base: 12, lg: 6, xl: 8 }}
           as={SimpleGrid}

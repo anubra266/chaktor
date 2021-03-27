@@ -12,6 +12,7 @@ const Sales = () => {
       rounded="2xl"
     >
       <Cards />
+      
     </Stack>
   );
 };
