@@ -44,7 +44,7 @@ const ActionsList = (props: StackProps) => {
 export default Actions;
 
 const ActionsButton = (props: IconButtonProps | any) => {
-  const { isOpen } = props;
+  const { isOpen, ...rest } = props;
   const icon = isOpen ? CgMenuMotion : CgMenuRightAlt;
   return (
     <IconButton
@@ -53,9 +53,9 @@ const ActionsButton = (props: IconButtonProps | any) => {
       variant="ghost"
       fontSize="2xl"
       aria-label="Toggle Actions"
-      icon={<Icon as={icon}  />}
+      icon={<Icon as={icon} />}
       transition="all .4s ease-in-out"
-      {...props}
+      {...rest}
     />
   );
 };

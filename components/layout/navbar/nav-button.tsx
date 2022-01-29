@@ -5,7 +5,7 @@ import { NavContext } from "..";
 
 const NavButton = (props: StackProps) => {
   const { onToggle, isOpen } = useContext(NavContext);
-  const icon = isOpen ? CgClose : CgMenu;
+  const icon = isOpen ? CgMenu : CgClose;
   return (
     <IconButton
       colorScheme="brand"

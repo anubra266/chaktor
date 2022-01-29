@@ -34,6 +34,7 @@ const Sidebar = () => {
       fontSize="sm"
       display={["none", , "initial"]}
       overflowX={isOpen ? "initial" : "clip"}
+      whiteSpace="nowrap"
     >
       {routes.map((props, rid) => (
         <NavAction
