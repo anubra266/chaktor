@@ -1,8 +1,7 @@
 import { Box } from "@chakra-ui/layout";
-import { ReactJSXElementChildrenAttribute } from "@emotion/react/types/jsx-namespace";
-import React from "react";
+import React, { PropsWithChildren } from "react";
 
-const Page = (props: { children: ReactJSXElementChildrenAttribute }) => {
+const Page = (props: PropsWithChildren) => {
   return <Box w="full">{props.children}</Box>;
 };
 

@@ -1,13 +1,12 @@
 import { Flex, Spacer, Stack, Text } from "@chakra-ui/layout";
-import React, { ReactNode } from "react";
+import React, { PropsWithChildren, ReactNode } from "react";
 
-type JustChild = { children: ReactNode };
 type PageHeader = {
   Title: typeof Title;
   Description: typeof Description;
   Actions: typeof Actions;
 };
-const PageHeader: React.FC & PageHeader = ({ children }: JustChild) => {
+const PageHeader = ({ children }: PropsWithChildren) => {
   const getChild = (type: string) =>
     React.Children.map(
       children,
@@ -24,7 +23,7 @@ const PageHeader: React.FC & PageHeader = ({ children }: JustChild) => {
   );
 };
 
-const Title = ({ children }: JustChild) => {
+const Title = ({ children }: PropsWithChildren) => {
   return (
     <Text textStyle="default" fontSize="2xl" fontWeight="semibold">
       {children}
@@ -32,11 +31,11 @@ const Title = ({ children }: JustChild) => {
   );
 };
 
-const Description = ({ children }: JustChild) => {
+const Description = ({ children }: PropsWithChildren) => {
   return <Text mr="auto">{children}</Text>;
 };
 
-const Actions = ({ children }: JustChild) => {
+const Actions = ({ children }: PropsWithChildren) => {
   return <Flex ml="auto">{children}</Flex>;
 };
 
