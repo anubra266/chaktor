@@ -3,7 +3,6 @@ import React, { createContext } from "react";
 import Navbar from "./navbar";
 import Page from "./page";
 import Sidebar from "./sidebar";
-import Scroll from "./scroll";
 import { useDisclosure, UseDisclosureReturn } from "@chakra-ui/hooks";
 import MobileSidebar from "./sidebar/mobile";
 import { useMediaQuery } from "@chakra-ui/media-query";
@@ -14,7 +13,6 @@ const SiteLayout = ({ children }: any) => {
   const sidebarState = useDisclosure();
   const [isSmallScreen] = useMediaQuery("(max-width: 768px)");
   return (
-    <Scroll>
       <NavContext.Provider value={sidebarState}>
         <Box textStyle="light">
           <Navbar />
@@ -27,7 +25,6 @@ const SiteLayout = ({ children }: any) => {
           </Box>
         </Box>
       </NavContext.Provider>
-    </Scroll>
   );
 };
 

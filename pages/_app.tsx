@@ -1,8 +1,12 @@
 import { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
 import { LayoutTree } from "@moxy/next-layout";
+import dynamic from 'next/dynamic'
 import Theme from "theme";
-import SiteLayout from "components/layout";
+
+const SiteLayout = dynamic(() => import('../components/layout'), {
+  ssr: false,
+ })
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

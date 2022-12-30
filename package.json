@@ -21,7 +21,6 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.2.0",
-    "react-scrollbars-custom": "^4.0.25",
     "typescript": "^4.2.3"
   }
 }
